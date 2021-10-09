@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="amazon-erd.erd">
+	<entities>
+		<data-source id="mysql8-17bcb180d48-7a780a088a2b1cb">
+			<entity id="1" name="brands" fq-name="amazon.brands" order="0" x="867" y="223">
+				<path name="amazon"/>
+			</entity>
+			<entity id="2" name="cart" fq-name="amazon.cart" order="1" x="524" y="405">
+				<path name="amazon"/>
+			</entity>
+			<entity id="3" name="categories" fq-name="amazon.categories" order="2" x="1038" y="501">
+				<path name="amazon"/>
+			</entity>
+			<entity id="4" name="favorites" fq-name="amazon.favorites" order="3" x="341" y="108">
+				<path name="amazon"/>
+			</entity>
+			<entity id="5" name="favorites_types" fq-name="amazon.favorites_types" order="4" border-width="3" x="675" y="84">
+				<path name="amazon"/>
+			</entity>
+			<entity id="6" name="making_orders" fq-name="amazon.making_orders" order="5" x="526" y="735">
+				<path name="amazon"/>
+			</entity>
+			<entity id="7" name="personal_data" fq-name="amazon.personal_data" order="6" x="46" y="325">
+				<path name="amazon"/>
+			</entity>
+			<entity id="8" name="products" fq-name="amazon.products" order="7" x="838" y="458">
+				<path name="amazon"/>
+			</entity>
+			<entity id="9" name="promo_codes" fq-name="amazon.promo_codes" order="8" x="312" y="730">
+				<path name="amazon"/>
+			</entity>
+			<entity id="10" name="promo_codes_activated" fq-name="amazon.promo_codes_activated" order="9" x="54" y="707">
+				<path name="amazon"/>
+			</entity>
+			<entity id="11" name="recomended_products" fq-name="amazon.recomended_products" order="10" x="514" y="593">
+				<path name="amazon"/>
+			</entity>
+			<entity id="12" name="users" fq-name="amazon.users" order="11" x="242" y="490">
+				<path name="amazon"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="favorites_ibfk_3" fq-name="amazon.favorites.favorites_ibfk_3" type="fk" pk-ref="1" fk-ref="4"/>
+		<relation name="products_ibfk_2" fq-name="amazon.products.products_ibfk_2" type="fk" pk-ref="1" fk-ref="8"/>
+		<relation name="products_ibfk_1" fq-name="amazon.products.products_ibfk_1" type="fk" pk-ref="3" fk-ref="8"/>
+		<relation name="favorites_ibfk_4" fq-name="amazon.favorites.favorites_ibfk_4" type="fk" pk-ref="5" fk-ref="4"/>
+		<relation name="cart_ibfk_2" fq-name="amazon.cart.cart_ibfk_2" type="fk" pk-ref="8" fk-ref="2"/>
+		<relation name="favorites_ibfk_2" fq-name="amazon.favorites.favorites_ibfk_2" type="fk" pk-ref="8" fk-ref="4"/>
+		<relation name="making_orders_ibfk_2" fq-name="amazon.making_orders.making_orders_ibfk_2" type="fk" pk-ref="8" fk-ref="6"/>
+		<relation name="recomended_products_ibfk_2" fq-name="amazon.recomended_products.recomended_products_ibfk_2" type="fk" pk-ref="8" fk-ref="11"/>
+		<relation name="recomended_products_ibfk_3" fq-name="amazon.recomended_products.recomended_products_ibfk_3" type="fk" pk-ref="8" fk-ref="11"/>
+		<relation name="promo_codes_activated_ibfk_2" fq-name="amazon.promo_codes_activated.promo_codes_activated_ibfk_2" type="fk" pk-ref="9" fk-ref="10"/>
+		<relation name="cart_ibfk_1" fq-name="amazon.cart.cart_ibfk_1" type="fk" pk-ref="12" fk-ref="2"/>
+		<relation name="favorites_ibfk_1" fq-name="amazon.favorites.favorites_ibfk_1" type="fk" pk-ref="12" fk-ref="4"/>
+		<relation name="making_orders_ibfk_1" fq-name="amazon.making_orders.making_orders_ibfk_1" type="fk" pk-ref="12" fk-ref="6"/>
+		<relation name="making_orders_ibfk_3" fq-name="amazon.making_orders.making_orders_ibfk_3" type="fk" pk-ref="12" fk-ref="6"/>
+		<relation name="fk_user_id" fq-name="amazon.personal_data.fk_user_id" type="fk" pk-ref="12" fk-ref="7"/>
+		<relation name="promo_codes_activated_ibfk_1" fq-name="amazon.promo_codes_activated.promo_codes_activated_ibfk_1" type="fk" pk-ref="12" fk-ref="10"/>
+		<relation name="recomended_products_ibfk_1" fq-name="amazon.recomended_products.recomended_products_ibfk_1" type="fk" pk-ref="12" fk-ref="11"/>
+	</relations>
+</diagram>
